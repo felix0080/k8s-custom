@@ -206,6 +206,7 @@ func (c *Controller) syncHandler(key string) error {
 	// Get the Network resource with this namespace/name
 	network, err := c.networksLister.Networks(namespace).Get(name)
 	if err != nil {
+
 		// The Network resource may no longer exist, in which case we stop
 		// processing.
 		if errors.IsNotFound(err) {
