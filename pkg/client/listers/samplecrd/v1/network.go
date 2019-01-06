@@ -88,6 +88,7 @@ func (s networkNamespaceLister) Get(name string) (*v1.Network, error) {
 		return nil, err
 	}
 	if !exists {
+
 		return nil, errors.NewNotFound(v1.Resource("network"), name)
 	}
 	return obj.(*v1.Network), nil
